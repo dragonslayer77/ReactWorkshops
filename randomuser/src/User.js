@@ -1,13 +1,19 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Contact from './Contact';
 
-export default function User() {
-  return (
-    <div>
-      <img src="" alt="name" />
-      <p>Name : </p>
-      <p>Age : </p>
-      <Contact />
-    </div>
-  )
+class User extends Component {
+  render(){
+    return (
+      this.props.users.map(user => (
+        <div key={user.id}>
+        <img src={user.picture} alt="name" />
+        <p>Name : {user.name}</p>
+        <p>Age : {user.age}</p>
+        <Contact user={user}/>
+      </div>
+    ))
+    )
+  }
 }
+
+export default User;

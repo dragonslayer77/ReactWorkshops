@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import User from './User';
 
+
 const users = [
   {
     "id": "5cd88ae26d2366b62f766b42",
@@ -39,7 +40,7 @@ const users = [
 function App() {
   return (
     <div className="App">
-      <User />
+      <User users={users}/>
     </div>
   );
 }
